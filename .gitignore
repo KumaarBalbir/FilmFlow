@@ -1,8 +1,16 @@
 venv
-notebook
+notebook/raw_data_processing.ipynb
+notebook/bollywood_processing.ipynb
 transform.pkl
 reviews.csv
 sentiment_model.pkl
 sentiment.ipynb
 .env
 .vscode
+notebook
+data/BollywoodMovieDetail.csv
+data/credits.csv
+data/data.csv
+data/IMDb Movies India.csv
+data/movie_metadata.csv
+data/movies_metadata.csv
