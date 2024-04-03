@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FilmFlow</title>
+
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/10de82da06.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- custome style -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='home.css')}}"
+    />
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body id="content">
+    <h1>FilmFlow</h1>
+    <div class="search-box">
+      <div class="row">
+        <input
+          type="text"
+          id="input-box"
+          placeholder="Search for a movie..."
+          autocomplete="off"
+        />
+
+        <button id="search-btn" onclick="searchMovie()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="result-box"></div>
+    </div>
+
+    <div id="loader" class="text-center"></div>
+
+    <div class="fail">
+      <center>
+        <h3>
+          Sorry! The movie you requested is not in our database. Please check
+          the spelling or try with other movies!
+        </h3>
+      </center>
+    </div>
+
+    <div class="results">
+      <center>
+        <h2 id="name" class="text-uppercase"></h2>
+      </center>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="{{url_for('static',filename='autocomplete.js')}}"
+    ></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="{{url_for('static',filename='recommend.js')}}"
+    ></script>
+  </body>
+</html>
