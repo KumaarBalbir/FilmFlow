@@ -1,6 +1,7 @@
 # import utils functions
 from preprocess.utils import store_csv
 from preprocess.utils import get_final_data
+from preprocess.utils import clean_data
 
 # import libraries
 import pandas as pd
@@ -27,5 +28,7 @@ df3 = pd.read_csv("../data/IMDb Movies India.csv", encoding=result['encoding'])
 
 df = get_final_data(df1, df3)
 
+# clean data
+df = clean_data(df)
 # save df to csv
 store_csv(df, "../data/final_data.csv")
