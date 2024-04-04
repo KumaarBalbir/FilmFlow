@@ -10,8 +10,6 @@ import bs4 as bs
 import urllib.request
 import pickle
 import requests
-import re
-import html
 
 # Load environment variables from .env file
 load_dotenv()
@@ -19,30 +17,9 @@ load_dotenv()
 API_KEY = os.environ.get('API_KEY')
 
 
-def clean_data(data):
-    # Remove punctuation and other unwanted characters from movie_title and all_info columns
-    data['movie_title'] = data['movie_title'].apply(
-        lambda x: re.sub(r'[^\w\s]', '', x))
-    data['all_info'] = data['all_info'].apply(
-        lambda x: re.sub(r'[^\w\s]', '', x))
-
-    # Convert HTML entities to regular characters
-    data['movie_title'] = data['movie_title'].apply(html.unescape)
-    data['all_info'] = data['all_info'].apply(html.unescape)
-
-    # Remove leading and trailing whitespace from movie_title
-    data['movie_title'] = data['movie_title'].str.strip()
-
-    # Convert all characters to lowercase
-    data['movie_title'] = data['movie_title'].str.lower()
-    data['all_info'] = data['all_info'].str.lower()
-
-    return data
-
 
 # global avialbe variable
 data = pd.read_csv('./data/final_data.csv', nrows=5000)
-data = clean_data(data)
 
 # creating a count matrix
 cv = CountVectorizer()
