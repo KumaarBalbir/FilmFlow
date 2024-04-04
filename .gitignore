@@ -8,9 +8,4 @@ sentiment.ipynb
 .env
 .vscode
 notebook
-data/BollywoodMovieDetail.csv
-data/credits.csv
-data/data.csv
-data/IMDb Movies India.csv
-data/movie_metadata.csv
-data/movies_metadata.csv
+data
