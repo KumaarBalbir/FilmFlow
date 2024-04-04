@@ -1,10 +1,5 @@
 venv
-notebook/raw_data_processing.ipynb
-notebook/bollywood_processing.ipynb
-transform.pkl
-reviews.csv
-sentiment_model.pkl
-sentiment.ipynb
+notebook/
 .env
 .vscode
 notebook
