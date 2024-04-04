@@ -290,3 +290,24 @@ def get_final_data(df1, df3):
     # Resetting the index after dropping duplicates
     df.reset_index(drop=True, inplace=True)
     return df
+
+
+def clean_data(data):
+    # Remove punctuation and other unwanted characters from movie_title and all_info columns
+    data['movie_title'] = data['movie_title'].apply(
+        lambda x: re.sub(r'[^\w\s]', '', x))
+    data['all_info'] = data['all_info'].apply(
+        lambda x: re.sub(r'[^\w\s]', '', x))
+
+    # Convert HTML entities to regular characters
+    data['movie_title'] = data['movie_title'].apply(html.unescape)
+    data['all_info'] = data['all_info'].apply(html.unescape)
+
+    # Remove leading and trailing whitespace from movie_title
+    data['movie_title'] = data['movie_title'].str.strip()
+
+    # Convert all characters to lowercase
+    data['movie_title'] = data['movie_title'].str.lower()
+    data['all_info'] = data['all_info'].str.lower()
+
+    return data
