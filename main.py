@@ -29,9 +29,9 @@ similarity = cosine_similarity(count_matrix)
 
 
 # load the nlp model and tfidf vectorizer from disk
-filename = 'sentiment_model.pkl'
+filename = 'artifact/sentiment_model.pkl'
 clf = pickle.load(open(filename, 'rb'))
-vectorizer = pickle.load(open('transform.pkl', 'rb'))
+vectorizer = pickle.load(open('artifact/transform.pkl', 'rb'))
 
 
 # converting list of string to list (eg. "["abc","def"]" to ["abc","def"])
